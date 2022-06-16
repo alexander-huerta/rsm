@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import '../styles.css';
 import {getBreweryListByCity} from '../../../breweryApi/apiConnection.js'
 import BreweryList from './BreweryList.jsx';
 
@@ -10,20 +11,24 @@ const App = () => {
   const handleClick = async () => {
     await getBreweryListByCity('astoria')
     .then((res) => {
-      console.log('appp', res)})
       setBreweryList(res)
+    })
   }
 
   if(breweryList.length === 0) {
     return (
-      <div>
-        Hello World
+      //Create a form and allow user to input city
+      <div className="App">
         <button onClick={handleClick}>
           Find Breweries </button>
       </div>
     )
   } else {
-    <BreweryList breweryList={breweryList}/>
+    return (
+      <div className="App">
+        <BreweryList breweryList={breweryList}/>
+      </div>
+    )
   }
 }
 

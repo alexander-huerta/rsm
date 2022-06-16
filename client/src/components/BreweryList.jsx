@@ -1,15 +1,17 @@
 import React from 'react';
 import BreweryListEntry from './BreweryListEntry.jsx';
+import '../styles.css';
+
 
 const BreweryList = ({breweryList}) => {
   return (
-    <div>
-
-   {breweryList.map((entry) => (
-     <BreweryListEntry brewery={entry} key={entry._id}/>
-   ))}
+    <div className="list-container">
+      <h2>Breweries in Astoria!</h2>
+      {breweryList.map((brewery) => (
+        <BreweryListEntry brewery={brewery} key={brewery.id}/>
+      ))}
   </div>
   )
-  }
+}
 
 export default BreweryList;
