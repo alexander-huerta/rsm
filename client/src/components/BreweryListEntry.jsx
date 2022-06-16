@@ -3,7 +3,7 @@ import '../styles.css';
 import { FaPlus } from 'react-icons/fa';
 import BreweryDetailsModal from './BreweryDetailsModal.jsx'
 
-const BreweryListEntry = ({brewery}) => {
+const BreweryListEntry = ({ brewery }) => {
 
   const [showModal, setShowModal] = useState(false)
 
@@ -32,9 +32,9 @@ const BreweryListEntry = ({brewery}) => {
         </a>
 
         <div>
-        <button onClick={handleClick}>
+          <button onClick={handleClick}>
           <FaPlus/>
-        </button>
+          </button>
         </div>
 
         {showModal && (
@@ -42,16 +42,18 @@ const BreweryListEntry = ({brewery}) => {
            Type: {brewery.brewery_type}
            </div>
         )
-       }
+        }
 
       </div>
     )
   } else {
     return (
       <div>
+
         <BreweryDetailsModal
           brewery={brewery}
           setShowModal={setShowModal}/>
+
       </div>
     )
   }

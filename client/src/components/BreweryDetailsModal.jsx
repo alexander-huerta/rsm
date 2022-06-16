@@ -4,7 +4,7 @@ import { FaTimes } from 'react-icons/fa';
 import { GOOGLE_API_KEY } from '../../../config.js'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
-const BreweryDetailsModal = ({brewery, setShowModal}) => {
+const BreweryDetailsModal = ({ brewery, setShowModal }) => {
 
   const [map, setMap] = useState(null)
 
@@ -41,6 +41,7 @@ const BreweryDetailsModal = ({brewery, setShowModal}) => {
 
     return (
       <div className="brewery-details-modal">
+
         <div>
           Name: {brewery.name}
         </div>
@@ -54,7 +55,7 @@ const BreweryDetailsModal = ({brewery, setShowModal}) => {
            <GoogleMap
              mapContainerStyle={containerStyle}
              center={center}
-             zoom={10}
+             zoom={8}
              onLoad={onLoad}
              onUnmount={onUnmount}
            />
@@ -69,7 +70,6 @@ const BreweryDetailsModal = ({brewery, setShowModal}) => {
 
       </div>
     )
-
 }
 
 export default BreweryDetailsModal;

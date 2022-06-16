@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 const PORT = 3050 || process.env.PORT;
-app.use(express.static('client/dist'));
 
+app.use(express.static('client/dist'));
 
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`);

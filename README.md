@@ -8,3 +8,4 @@
 2) Navigate to the main directory in your terminal. Run `npm run react-dev`.
 3) Then in a new terminal run `npm run server` to start the server.
 4) Open [http://localhost:3050](http://localhost:3050) to view the app in your browser.
+

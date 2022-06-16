@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import '../styles.css';
 import { FaBeer } from 'react-icons/fa';
-import {getBreweryListByCity} from '../../../breweryApi/apiConnection.js'
+import { getBreweryListByCity } from '../../../breweryApi/apiConnection.js'
 import BreweryList from './BreweryList.jsx';
 
 
@@ -9,16 +9,17 @@ const App = () => {
 
   const [breweryList, setBreweryList] = useState([]);
 
+  const city = 'astoria';
+
   const handleClick = async () => {
-    await getBreweryListByCity('astoria')
-    .then((res) => {
-      setBreweryList(res)
+    await getBreweryListByCity(city)
+    .then((breweryList) => {
+      setBreweryList(breweryList)
     })
   }
 
   if(breweryList.length === 0) {
     return (
-      //Create a form and allow user to input city
       <div className="App">
         <button onClick={handleClick}>
           Find Breweries <FaBeer/>
