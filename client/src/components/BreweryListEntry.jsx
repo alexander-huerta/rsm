@@ -1,16 +1,13 @@
 import React, {useState} from 'react';
 import '../styles.css';
 import { FaPlus } from 'react-icons/fa';
-
 import BreweryDetailsModal from './BreweryDetailsModal.jsx'
 
 const BreweryListEntry = ({brewery}) => {
 
   const [showModal, setShowModal] = useState(false)
-  console.log(brewery)
-  //create modal to display full data on click
+
   const handleClick = () => {
-    console.log('hi')
     setShowModal(true)
   }
 

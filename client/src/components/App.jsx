@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import '../styles.css';
 import { FaBeer } from 'react-icons/fa';
-
 import {getBreweryListByCity} from '../../../breweryApi/apiConnection.js'
 import BreweryList from './BreweryList.jsx';
 
