@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 body {
@@ -14,8 +13,14 @@ body {
   font-size: 28px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width:40%;
   margin: auto;
+}
+
+.brewery-details-modal {
+ padding: 16px;
+  border: 2px solid #ececec;
+  border-radius: 8px;
+  background:rgb(192, 95, 95);
 }
 
 button {
@@ -33,10 +38,7 @@ button {
   transition: 1s background ease;
 }
 
-
 .list-container {
-  width:50%;
-  width:fit-content;
   background:#a6dfea;
   padding: 25px;
   border: 0.75px solid #ECECEC;
@@ -45,12 +47,17 @@ button {
 
 }
 
-.listEntry {
+.list-entry {
   padding: 16px;
-  margin-bottom: 16px;
+  margin: 16px;
   border: 0.75px solid #ECECEC;
   border-radius: 8px;
+  background:#ccc;
   box-shadow: 0 2px 5px #ccc;
   position:inherit;
-  background:#ccc;
 }
+
+.title {
+  text-align: center;
+}
+

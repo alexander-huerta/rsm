@@ -1,30 +1,63 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles.css';
+import { FaPlus } from 'react-icons/fa';
+
+import BreweryDetailsModal from './BreweryDetailsModal.jsx'
 
 const BreweryListEntry = ({brewery}) => {
+
+  const [showModal, setShowModal] = useState(false)
   console.log(brewery)
   //create modal to display full data on click
-  return (
-    <div className="listEntry">
+  const handleClick = () => {
+    console.log('hi')
+    setShowModal(true)
+  }
 
-      <div>
-      Name: {brewery.name}
+  if(!showModal) {
+    return (
+      <div className="list-entry">
+
+        <div>
+        Name: {brewery.name}
+        </div>
+
+        <div>
+        Type: {brewery.brewery_type}
+        </div>
+
+        <div>
+        Address: {`${brewery.street}, ${brewery.city}, ${brewery.state}, ${brewery.postal_code}`}
+        </div>
+
+        <a href={brewery.website_url} target="_blank" rel="noopener noreferrer">
+        {brewery.website_url}
+        </a>
+
+        <div>
+        <button onClick={handleClick}>
+          <FaPlus/>
+        </button>
+        </div>
+
+        {showModal && (
+           <div className="breweryDetailsModal">
+           Type: {brewery.brewery_type}
+           </div>
+        )
+       }
+
       </div>
-
+    )
+  } else {
+    return (
       <div>
-      Type: {brewery.brewery_type}
+        <BreweryDetailsModal
+          brewery={brewery}
+          setShowModal={setShowModal}/>
       </div>
-
-      <div>
-      Address: {`${brewery.street}, ${brewery.city}, ${brewery.state}, ${brewery.postal_code}`}
-      </div>
-
-      <a href={brewery.website_url} target="_blank" rel="noopener noreferrer">
-      {brewery.website_url}
-      </a>
-
-    </div>
-  )
+    )
+  }
 }
 
 export default BreweryListEntry;

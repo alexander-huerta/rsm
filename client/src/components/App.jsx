@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import '../styles.css';
+import { FaBeer } from 'react-icons/fa';
+
 import {getBreweryListByCity} from '../../../breweryApi/apiConnection.js'
 import BreweryList from './BreweryList.jsx';
 
@@ -20,7 +22,8 @@ const App = () => {
       //Create a form and allow user to input city
       <div className="App">
         <button onClick={handleClick}>
-          Find Breweries </button>
+          Find Breweries <FaBeer/>
+        </button>
       </div>
     )
   } else {
