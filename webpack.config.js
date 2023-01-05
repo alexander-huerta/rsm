@@ -3,6 +3,8 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   entry: './client/src/index.jsx',
+  devtool: 'eval',
+
 
   module: {
     rules: [
