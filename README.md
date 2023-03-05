@@ -1,4 +1,5 @@
-## RSM Take home
+# Find a Brewery Near you 
+## Single Page Web App built with React that will display a list of breweries based off of the input zip code. Connected to the Google Maps API to display the precise location of a specific brewery on click. Basic server built with Express.js
 
 
 ## Getting Started
